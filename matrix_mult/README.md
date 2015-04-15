@@ -28,5 +28,5 @@
 
 #Compilation and "testing"
 
-- compile: `g++ -O3 -pthread -std=C+11 -o test testmult.cpp Matrix.h Vector.h`
+- compile: `g++ -O3 -pthread -std=c++11 -o test testmult.cpp Matrix.h Vector.h`
 - test: `./test 1000` , this multiplies 1000x1000 random matrices using different methods and compares results and execution time
