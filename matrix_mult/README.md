@@ -4,9 +4,10 @@
 - 3 nested for loops in ijk order
 
 ##Augented naive methods
-####ikj method
+#####ikj method
 - 3 nested for loops in ikj(!) order
-####transponated method
+
+#####transponated method
 - right matrix is transponated before multiplication -> both matrices are read in row continous order -> much better cache usage 
 
 
@@ -22,3 +23,10 @@
 - uses blocked matrix multiplication, when strassen blocks are small (256 defined in Matrix.h)
 - It uses stepwise padding of one row-column, when strassen blocks have odd dimension, as described int the second point here: http://en.wikipedia.org/wiki/Strassen_algorithm#Implementation_considerations
 
+
+---
+
+#Compilation and "testing"
+
+- compile: `g++ -O3 -pthread -std=C+11 -o test testmult.cpp Matrix.h Vector.h`
+- test: `./test 1000` , this multiplies 1000x1000 random matrices using different methods and compares results and execution time
